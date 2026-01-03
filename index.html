@@ -21,7 +21,7 @@
     <header>
       <div class="header-inner container">
         <div><h6 class="logo">GTG</h6></div>
-        <nav>
+        <nav class="desktop-nav">
           <ul class="nav-links">
             <li><a href="#">Home</a></li>
             <li><a href="#">Shop</a></li>
@@ -31,7 +31,7 @@
             <li><a href="#">Contact</a></li>
           </ul>
         </nav>
-        <div class="search-btn-group">
+        <div class="search-btn-group desktop-actions">
           <a href="#search">
             <img
               src="assets/icons/Search-Vector.svg"
@@ -40,6 +40,25 @@
             />
           </a>
           <button type="button" class="button">Shop Now</button>
+        </div>
+        <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+          ☰
+        </button>
+      </div>
+      <div class="mobile-menu" aria-hidden="true">
+        <button class="close-menu" aria-label="Close menu">✕</button>
+
+        <ul class="mobile-nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Fragnances</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+
+        <div class="mobile-actions search-btn-group">
+          <button class="button mob">Shop Now</button>
         </div>
       </div>
     </header>

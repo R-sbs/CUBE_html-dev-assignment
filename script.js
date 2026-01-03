@@ -43,3 +43,28 @@ nextBtn.addEventListener("click", () => {
   const index = (currentIndex + 1) % thumbs.length;
   updateSlider(index);
 });
+
+// hamburger functionality
+
+ const hamburger = document.querySelector('.hamburger');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const closeMenu = document.querySelector('.close-menu');
+
+  function openMenu() {
+    mobileMenu.classList.add('open');
+    mobileMenu.setAttribute('aria-hidden', 'false');
+    hamburger.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeMenuFn() {
+    mobileMenu.classList.remove('open');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    hamburger.setAttribute('aria-expanded', 'false');
+  }
+
+  hamburger.addEventListener('click', openMenu);
+  closeMenu.addEventListener('click', closeMenuFn);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenuFn();
+  });

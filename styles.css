@@ -92,7 +92,7 @@ table {
 
 /* end of css reset */
 
-* {
+html {
   font-family: "Inter", Arial, sans-serif;
   font-size: 16px;
 }
@@ -195,9 +195,92 @@ header {
   background: #016630;
 }
 
+/* mobile nav styles */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  inset: 0;
+  background: var(--button-gradient);
+  color: #fff;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 100;
+  padding: 24px;
+}
+
+.mobile-menu.open {
+  transform: translateX(0);
+}
+
+.close-menu {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  list-style: none;
+  padding: 0;
+  margin: 40px auto;
+  text-align: center;
+  font-weight: 700;
+}
+
+.mobile-nav-links li {
+  margin-bottom: 20px;
+}
+
+.mobile-nav-links a {
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #fff;
+}
+
+.mobile-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
+
+  button.mob {
+    background: #016630 !important;
+  }
+}
+
+/* Responsive behavior */
+@media (max-width: 1024px) {
+  .desktop-nav,
+  .desktop-actions {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* utility classes */
+
 .full-width {
   min-width: -webkit-fill-available;
 }
+
 .bold {
   font-weight: 800;
 }
@@ -297,6 +380,7 @@ header {
         img {
           width: 100%;
           height: 100%;
+
           object-fit: cover;
           object-position: center;
           border-radius: 1rem;
@@ -353,11 +437,13 @@ header {
         gap: 8px;
         margin-top: 1rem;
         justify-content: space-evenly;
+        overflow-x: scroll;
 
         .thumbnail {
           width: 100px;
           height: 100px;
           object-fit: cover;
+          aspect-ratio: 1;
           cursor: pointer;
           border-radius: 6px;
           opacity: 0.85;
@@ -494,9 +580,14 @@ header {
             .small {
               position: absolute;
               top: 0.6rem;
+              right: 0.6rem;
               font-size: 0.5rem;
               font-weight: 800;
-              color: var(--color-2);
+              background-color: var(--color-2);
+              color: white;
+              border-radius: 1rem;
+              padding: 2px 8px;
+              font-weight: 300;
             }
           }
 
@@ -820,11 +911,12 @@ footer {
     align-items: start;
     justify-content: space-between;
     margin: 2rem auto;
+    flex-wrap: wrap;
 
     color: white;
 
     .col {
-      min-width: 15rem;
+      min-width: 5rem;
       cursor: pointer;
     }
 
@@ -900,6 +992,112 @@ footer {
         font-size: 0.75rem;
         font-weight: 300;
       }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .product-container {
+    flex-direction: column;
+  }
+
+  .product-images-container,
+  .product-description {
+    width: 100%;
+  }
+
+  #collection {
+    padding: unset;
+    margin-bottom: 2rem;
+  }
+
+  #stats {
+    .stats {
+      padding: unset;
+    }
+  }
+  #choice {
+    padding: unset;
+
+    .choice-body {
+      overflow-x: scroll;
+
+      tr th img {
+        min-width: 6rem;
+      }
+    }
+  }
+  footer {
+    padding: 2rem;
+    .footer-inner .four {
+      flex-basis: 100%;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+
+  .product-container {
+    flex-wrap: wrap;
+  }
+
+  .product-images-container {
+    width: 100% !important;
+  }
+
+  .product-description {
+    width: 100% !important;
+  }
+
+  .one-time {
+    flex-basis: 100% !important;
+  }
+
+  #collection {
+    padding: unset;
+
+    .collection {
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .collection-content,
+    .collection-image {
+      width: 100% !important;
+      margin-bottom: 1rem;
+    }
+  }
+
+  #stats {
+    .stats {
+      flex-wrap: wrap;
+      gap: 1rem;
+
+      .number-stats {
+        max-width: 200px;
+      }
+    }
+  }
+
+  #choice {
+    padding: unset;
+
+    .choice-body {
+      overflow-x: scroll;
+
+      tr th img {
+        min-width: 6rem;
+      }
+    }
+  }
+
+  footer {
+    padding: 1rem;
+    .footer-inner .four {
+      flex-basis: 100%;
     }
   }
 }
