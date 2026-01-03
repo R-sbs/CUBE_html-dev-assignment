@@ -635,6 +635,7 @@ header {
               padding: 2rem;
               display: flex;
               flex-wrap: wrap;
+              justify-content: space-evenly;
               p {
                 color: var(--color-text-100);
                 flex-basis: 100%;
@@ -944,7 +945,7 @@ footer {
       gap: 0.5rem;
 
       img {
-          width: 1rem;
+        width: 1rem;
       }
     }
 
@@ -954,8 +955,8 @@ footer {
       flex-direction: column;
       gap: 1rem;
 
-      h6 {
-        white-space: nowrap;
+      p.news-title {
+        
         font-weight: 700;
         font-size: 0.9rem;
       }
